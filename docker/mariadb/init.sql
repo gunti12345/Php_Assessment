@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS repositories (
+  repo_id BIGINT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  url VARCHAR(512) NOT NULL,
+  created_at DATETIME NOT NULL,
+  pushed_at DATETIME NOT NULL,
+  description TEXT NULL,
+  stars INT NOT NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (repo_id),
+  KEY idx_stars (stars)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
